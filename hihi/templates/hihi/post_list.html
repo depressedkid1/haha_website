@@ -1,18 +1,13 @@
-<html>
-    <head>
-        <title>Hihihaha blog</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="/">Hihihaha Blog</a></h1>
-        </div>
+{% extends 'hihi/base.html' %}
+{% block content %}
     {% for post in posts %}
-        <div>
-            <p>published :{{post.time_publish}}</p>
+        <div class="post">
+            <div class="date">
+                <p>Опубликовано: {{post.time_publish}}</p>
+            </div>
             <p><img src="media/{{post.img}}"></p>
             <h2><a href="{{post.vk_id}}">{{ post.title }}</a></h2>
             <p>{{ post.content|linebreaksbr }}</p>
         </div>
     {% endfor %}
-    </body>
-</html>
+{% endblock %}
